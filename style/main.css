@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #000000;
+}
+
+input{
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: rgb(0, 255, 0);
+    font-size: 4vh;
+}
+
+input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: rgb(0, 255, 0);
+}
