@@ -98,11 +98,6 @@ function insertionSort(arr){
     return newArr;
 }
 
-function sleep(sleepDuration){
-    var now = new Date().getTime();
-    while(new Date().getTime() < now + sleepDuration){ /* Do nothing */ }
-}
-
 function updateNumbers(){
     let newNumber = parseInt(document.getElementById('numberAmount').value);
 
