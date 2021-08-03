@@ -16,10 +16,15 @@ let numberMax = 1000;
 // queue to visualize the sorting
 let queue = [];
 
+
+// basically the width of the rectangles
+let dx;
+
 function setup(){
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas');
     numbers = resetNumbers(numberAmount, numberMin, numberMax);
+    dx = width / numbers.length;
     insertionSort(numbers);
 }
 
@@ -38,7 +43,6 @@ function visualize(){
         [numbers[j], numbers[i]] = [numbers[i], numbers[j]];
 
         push();
-        let dx = width / numbers.length;
         let y = map(numbers[i], numberMin, numberMax, 0, height);
 
         fill(0, 60, 0);
@@ -49,7 +53,6 @@ function visualize(){
 }
 
 function drawNumbers(){
-    let dx = width / numbers.length;
 
     for(let i = 0; i < numbers.length; i++){
         push();
@@ -75,9 +78,6 @@ function resetNumbers(n, min, max){
 }
 
 function insertionSort(arr){
-    // clear the queue
-    queue = []
-
     let newArr = [...arr];
 
     for(let i = 0; i < newArr.length; i++){
@@ -103,8 +103,20 @@ function updateNumbers(){
 
     // check if valid number
     if(newNumber > 0){
+        // init numbers array with the desired amount of numbers
         numbers = resetNumbers(newNumber, numberMin, numberMax);
+
+        // clear the queue for rendering
+        queue = [];
+
+        // sort the new numbers
         insertionSort(numbers);
     }
 
+}
+
+// make the visual 'responsive'
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
+    dx = width / numbers.length;
 }
