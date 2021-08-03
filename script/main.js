@@ -46,6 +46,7 @@ function visualize(){
         let y = map(numbers[i], numberMin, numberMax, 0, height);
 
         fill(0, 60, 0);
+        noStroke();
         rect(j * dx, height, dx, -y);
 
         break;
@@ -59,6 +60,7 @@ function drawNumbers(){
         let y = map(numbers[i], numberMin, numberMax, 0, height);
 
         fill(0, 255, 0);
+        noStroke();
         rect(i * dx, height, dx, -y);
         pop();
     }
@@ -105,6 +107,9 @@ function updateNumbers(){
     if(newNumber > 0){
         // init numbers array with the desired amount of numbers
         numbers = resetNumbers(newNumber, numberMin, numberMax);
+
+        // reset dx
+        dx = width / numbers.length;
 
         // clear the queue for rendering
         queue = [];
