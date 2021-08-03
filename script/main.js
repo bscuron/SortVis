@@ -46,7 +46,6 @@ function visualize(){
         let y = map(numbers[i], numberMin, numberMax, 0, height);
 
         fill(0, 60, 0);
-        noStroke();
         rect(j * dx, height, dx, -y);
 
         break;
@@ -60,7 +59,6 @@ function drawNumbers(){
         let y = map(numbers[i], numberMin, numberMax, 0, height);
 
         fill(0, 255, 0);
-        noStroke();
         rect(i * dx, height, dx, -y);
         pop();
     }
