@@ -1,6 +1,6 @@
 # SortVis
 
-[demo](https://bscuron19.github.io/SortVis/)
+[demo](https://bscuron.github.io/SortVis/)
 
 Algorithms implemented (default):
 
